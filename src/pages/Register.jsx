@@ -1,28 +1,28 @@
-import React from "react"
+import {useState} from "react"
 
 export default function Register() {
     const [data, setData] = useState ({
         name: '',
         email: '',
-        password: '',
+        password: ''
     })
 
-    const registerUser = (e) => {
+const registerUser = (e) => {
     e.preventDefault()
 }
 
     return (
         <div>
-        <form onSubmit={registerUser}>
-            <label>Name</label>
-            <input type='text' placeholder="Please enter your name" value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
-            <label>Email</label>
-            <input type='email' placeholder="Please enter your email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-            <label>Password</label>
-            <input type='password' placeholder="Create a unique password please" value={data.password} onChange={(e)= setData({...data, password: e.target.value})} />
+            <form onSubmit={registerUser}>
+                <label>Name</label>
+                <input type='text' placeholder="Please enter your name" value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
+                <label>Email</label>
+                <input type='email' placeholder="Please enter your email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+                <label>Password</label>
+                <input type='password' placeholder="Create a unique password please" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
 
-            <button type='submit'>Submit</button>
-        </form>
+                <button type='submit'>Submit</button>
+            </form>
         </div>
     )
 }
